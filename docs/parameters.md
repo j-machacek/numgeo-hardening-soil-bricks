@@ -2,7 +2,7 @@
 
 This page documents the `props`/`statev` array layout as used by the Fortran API in this
 repository. For the meaning of the underlying physical quantities, see the
-[theory manual](https://j-machacek.github.io/numgeo/theory/constitutive-models/mechanical-models/hardening-soil-MN-bricks.html){ target="_blank" }.
+[theory manual](https://j-machacek.github.io/numgeo/2026-09/theory/constitutive-models/mechanical-models/hardening-soil-MN-bricks.html){ target="_blank" }.
 
 All three components described under [Components](components/index.md) — the incremental driver,
 the calibration tool and the UMAT interface — use exactly this layout.

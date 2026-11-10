@@ -37,7 +37,7 @@ model is directly through numgeo itself, where material-parameter input, state-v
 initialisation and output requests all follow the documented numgeo conventions. This repository
 exists for users who specifically want the constitutive routine outside numgeo — in Abaqus, or in
 a standalone element-test driver. <br>
-[:octicons-arrow-right-16: numgeo reference manual](https://j-machacek.github.io/numgeo/reference/material/mechanical/hardening_soil_MN_bricks.html){ target="_blank" }
+[:octicons-arrow-right-16: numgeo reference manual](https://j-machacek.github.io/numgeo/2026-09/reference/material/mechanical/hardening_soil_MN_bricks.html){ target="_blank" }
 </div>
 
 </div>

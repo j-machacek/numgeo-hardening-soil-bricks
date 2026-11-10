@@ -7,7 +7,7 @@ truth, so that this repository's documentation and the numgeo documentation neve
 !!! abstract "Hardening Soil (MN, Bricks) — theory manual"
     The complete derivation is given here:
 
-    [:octicons-book-16: Hardening Soil (MN, Bricks) — numgeo theory manual](https://j-machacek.github.io/numgeo/theory/constitutive-models/mechanical-models/hardening-soil-MN-bricks.html){ .md-button .md-button--primary target="_blank" }
+    [:octicons-book-16: Hardening Soil (MN, Bricks) — numgeo theory manual](https://j-machacek.github.io/numgeo/2026-09/theory/constitutive-models/mechanical-models/hardening-soil-MN-bricks.html){ .md-button .md-button--primary target="_blank" }
 
     It covers, in order:
 
@@ -43,7 +43,7 @@ API (rather than numgeo's `*.inp` syntax). <br>
 ### Base model
 The BRICK extension builds on the base Hardening Soil (MN) model — see its theory page for
 everything not specific to small-strain stiffness. <br>
-[:octicons-arrow-right-16: Hardening Soil (MN) — theory manual](https://j-machacek.github.io/numgeo/theory/constitutive-models/mechanical-models/hardening-soil-MN.html){ target="_blank" }
+[:octicons-arrow-right-16: Hardening Soil (MN) — theory manual](https://j-machacek.github.io/numgeo/2026-09/theory/constitutive-models/mechanical-models/hardening-soil-MN.html){ target="_blank" }
 </div>
 
 </div>

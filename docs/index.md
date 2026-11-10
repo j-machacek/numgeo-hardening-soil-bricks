@@ -91,7 +91,7 @@ calibration procedure — is documented on the numgeo documentation site and is 
 here.
 
 !!! abstract "Theory & equations"
-    [:octicons-book-16: Hardening Soil (MN, Bricks) — theory manual](https://j-machacek.github.io/numgeo/theory/constitutive-models/mechanical-models/hardening-soil-MN-bricks.html){ target="_blank" }
+    [:octicons-book-16: Hardening Soil (MN, Bricks) — theory manual](https://j-machacek.github.io/numgeo/2026-09/theory/constitutive-models/mechanical-models/hardening-soil-MN-bricks.html){ target="_blank" }
 
     See the [Theory](theory.md) page for a short orientation, and [Model parameters](parameters.md)
     for how the theory's symbols map onto the `props`/`statev` arrays used by the code in this
