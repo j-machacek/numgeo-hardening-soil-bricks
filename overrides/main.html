@@ -1,0 +1,56 @@
+{#-
+  Theme overrides for the versioned documentation (as in the numgeo documentation).
+
+  config.extra.doc_version is set by scripts/build_docs.py for every version
+  (dev | YYYY-MM). A plain "zensical build" renders no banner at all.
+
+  - development version: permanent banner above the header, not indexed by
+    search engines (robots noindex)
+  - older release: the theme shows the "outdated" banner when the version is
+    not the one with the alias "latest" in versions.json
+
+  10.11.2026, J. Machacek - Banners for the development version and older releases.
+-#}
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {%- if config.extra.doc_version and config.extra.doc_version.development -%}
+    {#- Search engines should lead readers to released documentation. -#}
+    <meta name="robots" content="noindex">
+  {%- endif -%}
+  {%- if config.extra.doc_version -%}
+    <style>
+      .md-banner:has(.hs-dev-banner) {
+        color: var(--md-warning-fg-color);
+        background-color: var(--md-warning-bg-color);
+      }
+      .hs-dev-banner a { color: inherit; text-decoration: underline; }
+      /* Phones: the version selector needs the room; the site name would be
+         cut to one or two letters. It remains in the navigation drawer. */
+      @media screen and (max-width: 44.984375em) {
+        .md-header__topic:first-child > .md-ellipsis { display: none; }
+      }
+    </style>
+  {%- endif -%}
+{% endblock %}
+
+{% block announce %}
+  {%- set version = config.extra.doc_version -%}
+  {%- if version and version.development -%}
+    <div class="hs-dev-banner">
+      <strong>Active development.</strong>
+      This version of the documentation describes the current state of development,
+      which is not yet part of a release. The source code, the executables and the
+      results may still change.
+      <a href="{{ version.root_url }}">Go to the documentation of the latest release.</a>
+    </div>
+  {%- endif -%}
+{% endblock %}
+
+{% block outdated %}
+  {%- set version = config.extra.doc_version -%}
+  {%- if version and not version.development -%}
+    You are viewing the documentation of release {{ version.id }}, which is not the latest release.
+    <a href="{{ version.root_url }}"><strong>Go to the documentation of the latest release.</strong></a>
+  {%- endif -%}
+{% endblock %}

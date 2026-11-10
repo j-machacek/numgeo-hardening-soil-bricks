@@ -1,13 +1,24 @@
+# Versioned documentation, as for numgeo: main -> "dev" (active development),
+# release/YYYY-MM -> "YYYY-MM". Every run builds all versions and publishes them
+# together (scripts/build_docs.py). A new release branch appears with the next
+# push to main or when this workflow is started by hand (Actions -> Documentation
+# -> Run workflow, on main). At least one release branch must exist on GitHub.
+#
+# 10.11.2026, J. Machacek - Versioned documentation (development version and releases).
 name: Documentation
 on:
   push:
     branches:
       - master
       - main
+  workflow_dispatch:
 permissions:
   contents: read
   pages: write
   id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
 jobs:
   deploy:
     environment:
@@ -17,11 +28,14 @@ jobs:
     steps:
       - uses: actions/configure-pages@v5
       - uses: actions/checkout@v5
+        with:
+          # All branches: the releases are built from origin/release/*.
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: 3.x
       - run: pip install zensical
-      - run: zensical build --clean 
+      - run: python scripts/build_docs.py --dev-ref HEAD --remote origin
       - uses: actions/upload-pages-artifact@v4
         with:
           path: site
